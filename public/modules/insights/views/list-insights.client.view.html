@@ -1,0 +1,19 @@
+<section data-ng-controller="InsightsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Insights</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="insight in insights" data-ng-href="#!/insights/{{insight._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="insight.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="insight.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="insight.name"></h4>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!insights.$resolved || insights.length">
+    	No Insights yet, why don't you <a href="/#!/insights/create">create one</a>?
+    </div>
+</section>

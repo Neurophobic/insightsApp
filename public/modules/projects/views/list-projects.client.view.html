@@ -1,0 +1,39 @@
+<section data-ng-controller="ProjectsController" data-ng-init="find()">
+
+
+  <div class="input-group input-group-lg col-xs-12">
+    <input type="text" class="form-control search-field" ng-model="searchText" placeholder="Search for a project...">
+
+  </div><!-- /input-group -->
+
+
+  <div class="list-group">
+    <div class="col-xs-12 col-sm-4 card" data-ng-repeat="project in projects | filter:searchText">
+
+      <a  data-ng-href="#!/projects/{{project._id}}" class="list-group-item card-content">
+        <div class="row">
+          <div class="col-xs-3 profile-circle-card"> <img src="modules/projects/img/profileCircle.png" class="img-responsive" /> 	</div>
+          <div class="col-xs-9">
+            <div class="row"><h1 data-ng-bind="project.name"></h1></div>
+            <div class="row"><h2 data-ng-bind="project.desc"></h2></div>
+
+          </div>
+        </div>
+        <div class="row  featured-project-img-row">
+          <div class="col-xs-12 featured-project-img-col">
+            <img src="http://placehold.it/400x150" class="img-responsive"/>
+          </div>
+        </div>
+
+      </a>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="alert alert-warning text-center" data-ng-hide="!projects.$resolved || projects.length">
+    No Projects yet, why don't you <a href="/#!/projects/create">create one</a>?
+  </div>
+</section>

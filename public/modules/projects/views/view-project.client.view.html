@@ -1,0 +1,42 @@
+<section data-ng-controller="ProjectsController" data-ng-init="findOne()">
+	<div class="page-header project-view-title">
+		<h1 data-ng-bind="project.name"></h1>
+	</div>
+
+</section>
+
+<section data-ng-controller="TasksController" data-ng-init="find()">
+
+	<a  data-ng-href="#!/tasks/{{task._id}}" data-ng-repeat="task in tasks | filter:{ project: $root.passedProjectId }" >
+
+
+		<div class="row task-preview-project" >
+
+
+
+
+
+			<div class="col-xs-9">
+				<h1 data-ng-bind="task.name"></h1>
+			</div>
+
+			<div class="col-xs-3 .profile-circle-card">
+				<img src="modules/projects/img/profileCircle.png" class="img-responsive" />
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+	</a>
+
+</section>
