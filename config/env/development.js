@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://admin:admin@ds037581.mongolab.com:37581/meanstack',
+	db: 'mongodb://localhost/dcp-dev',
 	app: {
 		title: 'dcpApp - Development Environment'
 	},
