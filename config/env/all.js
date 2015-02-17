@@ -6,7 +6,7 @@ module.exports = {
 		description: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js',
 		keywords: 'MongoDB, Express, AngularJS, Node.js'
 	},
-	port: process.env.PORT || 3000,
+	port: process.env.PORT || 3002,
 	templateEngine: 'swig',
 	sessionSecret: 'MEAN',
 	sessionCollection: 'sessions',
@@ -15,10 +15,12 @@ module.exports = {
 			css: [
 				'public/lib/bootstrap/dist/css/bootstrap.css',
 				'public/lib/bootstrap/dist/css/bootstrap-theme.css',
-				
+
 			],
 			js: [
+				'public/lib/ng-file-upload/angular-file-upload-shim.min.js',
 				'public/lib/angular/angular.js',
+				'public/lib/ng-file-upload/angular-file-upload.min.js',
 				'public/lib/angular-resource/angular-resource.js',
 				'public/lib/angular-cookies/angular-cookies.js',
 				'public/lib/angular-animate/angular-animate.js',

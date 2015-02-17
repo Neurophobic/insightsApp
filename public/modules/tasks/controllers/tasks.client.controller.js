@@ -56,12 +56,17 @@ angular.module('tasks').controller('TasksController', ['$scope', '$stateParams',
 			$scope.tasks = Tasks.query();
 		};
 
+
+
 		// Find existing Task
 		$scope.findOne = function() {
 			$scope.task = Tasks.get({
 				taskId: $stateParams.taskId
 			});
 			$rootScope.passedTaskId = $stateParams.taskId;
+			$rootScope.passedTask = $scope.task;
 		};
+
+		
 	}
 ]);

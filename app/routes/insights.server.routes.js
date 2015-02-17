@@ -16,4 +16,5 @@ module.exports = function(app) {
 
 	// Finish by binding the Insight middleware
 	app.param('insightId', insights.insightByID);
+
 };

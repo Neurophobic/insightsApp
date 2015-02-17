@@ -1,8 +1,8 @@
 'use strict';
 
 // Insights controller
-angular.module('insights').controller('InsightsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Insights', '$rootScope',
-	function($scope, $stateParams, $location, Authentication, Insights, $rootScope) {
+angular.module('insights').controller('InsightsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Insights', '$rootScope','$upload',
+	function($scope, $stateParams, $location, Authentication, Insights, $rootScope, $upload) {
 		$scope.authentication = Authentication;
 
 		// Create new Insight
@@ -11,12 +11,41 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 			var insight = new Insights ({
 				name: this.name,
 				text: this.text,
-				taskid: $rootScope.passedTaskId
+				_creator: $rootScope.passedTask._id,
+				taskid: $rootScope.passedTask._id
 			});
+
+
+
 
 			// Redirect after save
 			insight.$save(function(response) {
 				$location.path('insights/' + response._id);
+
+				// Clear form fields
+				$scope.name = '';
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
+		};
+
+
+		// Create new Insight
+		$scope.instacreate = function() {
+			// Create new Insight object
+			var insight = new Insights ({
+				name: this.name,
+				text: this.text,
+				_creator: $rootScope.passedTask._id,
+				taskid: $rootScope.passedTask._id
+			});
+
+
+
+
+			// Redirect after save
+			insight.$save(function(response) {
+				$rootScope.passedInstaInsight = response._id;
 
 				// Clear form fields
 				$scope.name = '';
@@ -64,5 +93,9 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 				insightId: $stateParams.insightId
 			});
 		};
+
+
+
+
 	}
 ]);

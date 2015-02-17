@@ -7,12 +7,12 @@
 
 <section data-ng-controller="TasksController" data-ng-init="find()">
 
-	<a  data-ng-href="#!/tasks/{{task._id}}" data-ng-repeat="task in tasks | filter:{ project: $root.passedProjectId }" >
 
 
-		<div class="row task-preview-project" >
 
+	<div class="row task-preview-project" data-ng-repeat="task in tasks | filter:{ project: $root.passedProjectId }" >
 
+		<a  data-ng-href="#!/tasks/{{task._id}}"  >
 
 
 
@@ -26,17 +26,10 @@
 
 
 
+		</a>
 
 
+	</div>
 
-
-
-
-
-
-
-
-		</div>
-	</a>
 
 </section>

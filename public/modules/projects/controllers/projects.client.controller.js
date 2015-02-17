@@ -5,6 +5,11 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 	function($scope, $stateParams, $location, Authentication, Projects, $rootScope) {
 		$scope.authentication = Authentication;
 
+		$scope.search = function() {
+			$scope.text = this.text;
+			$location.path('projects/' + $scope.text);
+		};
+
 		// Create new Project
 		$scope.create = function() {
 			// Create new Project object

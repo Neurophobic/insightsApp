@@ -21,6 +21,7 @@ var fs = require('fs'),
 	flash = require('connect-flash'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
+	busboyBodyParser = require('busboy-body-parser'),
 	path = require('path');
 
 module.exports = function(db) {
@@ -81,6 +82,11 @@ module.exports = function(db) {
 	}));
 	app.use(bodyParser.json());
 	app.use(methodOverride());
+
+
+//BUSYBODY
+app.use(busboyBodyParser());
+
 
 	// CookieParser should be above session
 	app.use(cookieParser());

@@ -15,6 +15,8 @@ exports.create = function(req, res) {
 	var insight = new Insight(req.body);
 	insight.user = req.user;
 
+
+
 	insight.save(function(err) {
 		if (err) {
 			return res.status(400).send({
@@ -72,7 +74,7 @@ exports.delete = function(req, res) {
 /**
  * List of Insights
  */
-exports.list = function(req, res) { 
+exports.list = function(req, res) {
 	Insight.find().sort('-created').populate('user', 'displayName').exec(function(err, insights) {
 		if (err) {
 			return res.status(400).send({
@@ -87,7 +89,7 @@ exports.list = function(req, res) {
 /**
  * Insight middleware
  */
-exports.insightByID = function(req, res, next, id) { 
+exports.insightByID = function(req, res, next, id) {
 	Insight.findById(id).populate('user', 'displayName').exec(function(err, insight) {
 		if (err) return next(err);
 		if (! insight) return next(new Error('Failed to load Insight ' + id));
@@ -105,3 +107,5 @@ exports.hasAuthorization = function(req, res, next) {
 	}
 	next();
 };
+
+//image uploader

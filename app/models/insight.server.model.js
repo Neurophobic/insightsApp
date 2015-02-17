@@ -28,9 +28,17 @@ var InsightSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
-	taskid: {
+	_creator: {
 		type: Schema.ObjectId,
 		ref: 'Task'
+	},
+	taskid: {
+		type: Schema.ObjectId,
+		ref: 'Taskid'
+	},
+	image: {
+		type: String,
+		default:''
 	}
 
 });

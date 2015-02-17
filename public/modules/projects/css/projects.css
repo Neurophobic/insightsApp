@@ -170,3 +170,9 @@ The view project.
   margin-top:20px;
   margin-bottom:20px;
 }
+
+
+.qr-scan-row{
+  margin-top:-20px;
+  margin-bottom:60px;
+}
