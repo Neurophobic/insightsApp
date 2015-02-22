@@ -48,9 +48,27 @@
 }
 
 .card-content{
-  padding:15px;
+  padding:10px;
+  padding-bottom:5px;
+  margin-bottom:-10px;
+  margin-top:-10px;
   border:0px;
-  background-color: #f9f9f9;
+  background-color: #FFFFFF;
+  -webkit-border-radius: 2px !important;
+
+  -moz-border-radius: 2px !important;
+
+  border-radius: 2px !important;
+
+  /*box-shadow:12px 18px #EEEEEE, 8px 12px #EEEEEE, 4px 6px #EEEEEE, 1px 2px #EEEEEE,2px 3px #EEEEEE ,3px 4px #EEEEEE;*/
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.card-content h1{
+  font-family: 'Roboto', sans-serif;
+  font-size:1.5em !;
+  color:#202020;
+
 }
 
 
@@ -124,12 +142,14 @@ The view project.
 
 .project-view-title {
   margin-top:-40px;
+  font-family: 'Roboto', sans-serif;
 
 }
 
 .project-view-title h1 {
   font-size:36px;
   font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   color:#202020;
   margin-top:20px;
   margin-bottom:5px;
@@ -163,12 +183,12 @@ The view project.
 
 .task-preview-project h1 {
 
-  font-size:25px;
+  font-size:20px;
   font-weight:300;
   font-family: 'Roboto', sans-serif;
   color:#202020;
-  margin-top:20px;
-  margin-bottom:20px;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
 

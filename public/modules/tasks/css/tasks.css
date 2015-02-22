@@ -1,16 +1,53 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 
-.task-view-name {
+.task-view-name h1{
   margin-top:-20px;
   font-family: 'Roboto', sans-serif;
-  font-weight:400;
-  font-size: 2em;
+  font-weight:500;
+  font-size: 1.7em;
 }
 
+.task-view-name h2{
+  margin-top:10px;
+  font-family: 'Roboto', sans-serif;
+  font-weight:400;
+  font-size: 1.1em;
+}
 .insight-textarea {
 
   margin-top:20px;
   background-color:white !important;
   border-radius: 0px !important;
   border: 0px !important;
+}
+
+.task-color-text{
+  background: #4caf50;
+  width:4.4em;
+  height:4.4em;
+  border-radius:4.4em;
+  margin-right:20px;
+}
+
+.task-color-image{
+  background-color:#FFEB3B;
+  width:4.4em;
+  height:4.4em;
+  border-radius:4.4em;
+  margin-right:20px;
+}
+
+.task-color-sound{
+  background-color:#FFEB3B;
+  width:4.4em;
+  height:4.4em;
+  border-radius:4.4em;
+  margin-right:20px;
+}
+
+.task-preview-icon {
+  color:black;
+  font-size:2.7em;
+  margin-left:20%;
+  margin-top:10px;
 }

@@ -1,8 +1,9 @@
-<section data-ng-controller="TasksController" data-ng-init="findOne()">
+<section data-ng-controller="TasksController" data-ng-init="findOne()" >
 
-	<h1 data-ng-bind="task.name" class="task-view-name"></h1>
-	<h1 data-ng-bind="task.type" class="task-view-name"></h1>
-
+<div class="task-view-name">
+	<h1 data-ng-bind="task.name"></h1>
+	<h2 data-ng-bind="task.purpose"></h2>
+</div>
 
 	<div ng-if="task.type == 'text'">
 		<section data-ng-controller="InsightsController">
