@@ -46,13 +46,12 @@
 			<div class="col-md-12" ng-init="instacreate()">
 			</div>
 
-			<canvas id='canvas' width='100' height='100'></canvas>
 
 
 
 
 				<form action="{{'http://178.62.118.59:3002/upload/uploading/' + $root.passedInstaInsight}}" method="post" enctype="multipart/form-data">
-					<input type="file" name="filefield" accept="image/*" capture="camera" id="capture">
+					<input type="file" name="filefield" accept="image/*;capture=camera">
 					<input type="submit" class="btn btn-default">
 				</form>
 
@@ -64,32 +63,7 @@
 	</div>
 
 
-	<script type="text/javascript">
-	var onFailSoHard = function(e)
-	{
-		console.log('failed',e);
-	}
 
-	window.URL = window.URL || window.webkitURL ;
-	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
-
-	var video = document.querySelector('video');
-
-	if(navigator.getUserMedia)
-		{
-			navigator.getUserMedia({video: true},function(stream) {
-				video.src = window.URL.createObjectURL(stream);
-			},onFailSoHard);
-		}
-
-
-		var canvas = document.getElementById('canvas');
-		var ctx = canvas.getContext('2d');
-		setInterval(function(){
-			ctx.drawImage(video,0,0);
-		}, 100);
-
-	</script>
 
 </section>
 
