@@ -1,6 +1,6 @@
 <section data-ng-controller="TasksController" data-ng-init="findOne()" >
 
-<div class="task-view-name">
+<div class="task-view-name background-{{task.type}}">
 	<h1 data-ng-bind="task.name"></h1>
 	<h2 data-ng-bind="task.purpose"></h2>
 </div>
@@ -41,27 +41,74 @@
 
 
 
-	<div ng-if="task.type == 'image'">
+	<div ng-if="task.type == 'image'" >
 		<section data-ng-controller="InsightsController">
 			<div class="col-md-12" ng-init="instacreate()">
 			</div>
+<div id="image-uploader">
 
 
 
 
-
-				<form action="{{'http://178.62.118.59:3002/upload/uploading/' + $root.passedInstaInsight}}" method="post" enctype="multipart/form-data">
+				<form action="{{'http://178.62.118.59:3002/upload/uploading/' + $root.passedInstaInsight}}" method="post" enctype="multipart/form-data" onSubmit="JavaScript:ExampleJS()">
 					<input type="file" name="filefield" accept="image/*;capture=camera">
 					<input type="submit" class="btn btn-default">
 				</form>
 
-
+</div>
 
 
 		</section>
 
+
+
+		<section data-ng-controller="ProjectsController" data-ng-init="findOneById()">
+			<div class="page-header" >
+
+			</div>
+			<div class="col-md-12">
+				<form class="form-horizontal" id="updateProjectNumForm" data-ng-submit="update()" novalidate>
+					<fieldset>
+
+						<div class="form-group">
+							<input type="submit" value="Update project num" class="btn btn-default">
+						</div>
+						<div data-ng-show="error" class="text-danger">
+							<strong data-ng-bind="error"></strong>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</section>
+
+
+		<section data-ng-controller="TasksController" data-ng-init="findOneById()">
+			<div class="page-header" >
+
+			</div>
+			<div class="col-md-12">
+				<form class="form-horizontal" id="updateTaskNumForm"data-ng-submit="update()" novalidate>
+					<fieldset>
+
+						<div class="form-group">
+							<input type="submit" value="Update task num" class="btn btn-default">
+						</div>
+						<div data-ng-show="error" class="text-danger">
+							<strong data-ng-bind="error"></strong>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</section>
+
 	</div>
 
+	<script type="text/javascript">
+
+	function ExampleJS() {
+		document.getElementById('image-uploader').style.display = 'none';
+	}
+	</script>
 
 
 

@@ -18,6 +18,7 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 
 
 
+
 			// Redirect after save
 			insight.$save(function(response) {
 				$location.path('insights/' + response._id);
@@ -46,6 +47,7 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 			// Redirect after save
 			insight.$save(function(response) {
 				$rootScope.passedInstaInsight = response._id;
+				$rootScope.passedInsight = response;
 
 				// Clear form fields
 				$scope.name = '';
@@ -92,6 +94,8 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 			$scope.insight = Insights.get({
 				insightId: $stateParams.insightId
 			});
+			console.log($scope.insight);
+			$rootScope.passedInsight = $scope.insight;
 		};
 
 

@@ -18,6 +18,7 @@ module.exports = {
 
 			],
 			js: [
+				'public/lib/jquery/dist/jquery.js',
 				'public/lib/ng-file-upload/angular-file-upload-shim.min.js',
 				'public/lib/angular/angular.js',
 				'public/lib/ng-file-upload/angular-file-upload.min.js',

@@ -5,6 +5,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 	function($scope, $stateParams, $location, Authentication, Projects, $rootScope) {
 		$scope.authentication = Authentication;
 
+
 		$scope.search = function() {
 			$scope.text = this.text;
 			$location.path('projects/' + $scope.text);
@@ -48,9 +49,13 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		// Update existing Project
 		$scope.update = function() {
 			var project = $scope.project;
+			project.numberinsights = (project.numberinsights+1);
+			project.featuredtextinsight = $rootScope.passedInsight.text;
+			project.featuredinsighttype = $rootScope.passedTask.type;
+			project.featuredimageinsight = $rootScope.passedInsight._id;
 
 			project.$update(function() {
-				$location.path('projects/' + project._id);
+				//$location.path('projects/' + project._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
@@ -68,7 +73,40 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			});
 
 			$rootScope.passedProjectId = $stateParams.projectId;
+			$rootScope.passedProject = $scope.project;
 
+		};
+
+
+		// Find existing Project
+		$scope.findOneAndAdd = function() {
+
+		console.log($rootScope.passedProjectId);
+
+		$scope.project = Projects.get({
+			projectId: $rootScope.passedProjectId
+		});
+
+		$rootScope.passedProject.numberinsights.push(1);
+
+		$scope.project.numberinsights = $scope.project.numberinsights + 1;
+
+		console.log($rootScope.passedProject.numberinsights);
+
+
+
+
+
+
+
+		};
+
+		$scope.findOneById = function() {
+			$scope.project = Projects.get({
+				projectId: $rootScope.passedProjectId
+			});
+
+			$scope.project.numberinsights = $scope.project.numberinsights + 1;
 		};
 	}
 ]);

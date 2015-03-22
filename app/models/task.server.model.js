@@ -40,9 +40,14 @@ var TaskSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'Project'
 	},
+	numberinsights: {
+		type: Number,
+		default: 0,
+		trim: true
+	},
 	insights : [{
 		 type: Schema.Types.ObjectId,
-		 ref: 'Insight' 
+		 ref: 'Insight'
 	}]
 
 });

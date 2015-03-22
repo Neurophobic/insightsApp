@@ -1,21 +1,33 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+.task-view-name {
+  margin-top:-50px;
 
+
+  position:absolute;
+
+  left:0px;
+  width:100%;
+}
 .task-view-name h1{
-  margin-top:-20px;
-  font-family: 'Roboto', sans-serif;
+  margin-top:10px;
+  font-family: 'Open Sans', sans-serif;
+  color:#212121;
   font-weight:500;
-  font-size: 1.7em;
+  font-size: 1.9em;
+  margin-left:15px;
 }
 
 .task-view-name h2{
   margin-top:10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', serif;
+  color:#212121;
+  margin-left:15px;
   font-weight:400;
   font-size: 1.1em;
 }
 .insight-textarea {
 
-  margin-top:20px;
+  margin-top:40px;
   background-color:white !important;
   border-radius: 0px !important;
   border: 0px !important;
@@ -38,7 +50,7 @@
 }
 
 .task-color-sound{
-  background-color:#FFEB3B;
+  background-color:#f44336;
   width:4.4em;
   height:4.4em;
   border-radius:4.4em;
@@ -46,8 +58,8 @@
 }
 
 .task-preview-icon {
-  color:black;
+  color:#212121;
   font-size:2.7em;
   margin-left:20%;
-  margin-top:10px;
+  margin-top:5px;
 }

@@ -43,9 +43,10 @@ angular.module('tasks').controller('TasksController', ['$scope', '$stateParams',
 		// Update existing Task
 		$scope.update = function() {
 			var task = $scope.task;
+			task.numberinsights = (task.numberinsights+1);
 
 			task.$update(function() {
-				$location.path('tasks/' + task._id);
+				//$location.path('tasks/' + task._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
@@ -67,6 +68,14 @@ angular.module('tasks').controller('TasksController', ['$scope', '$stateParams',
 			$rootScope.passedTask = $scope.task;
 		};
 
-		
+		$scope.findOneById = function() {
+			$scope.task = Tasks.get({
+				taskId: $rootScope.passedTaskId
+			});
+
+			//$scope.project.numberinsights = $scope.project.numberinsights + 1;
+		};
+
+
 	}
 ]);

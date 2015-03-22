@@ -1,16 +1,17 @@
 <section data-ng-controller="ProjectsController" data-ng-init="findOne()">
-	<div class="page-header project-view-title">
+	<div class="project-view-title background-{{project.color}}">
 		<h1 data-ng-bind="project.name"></h1>
+		<h2 data-ng-bind="project.desc"></h2>
 	</div>
 
 </section>
 
-<section data-ng-controller="TasksController" data-ng-init="find()">
+<section data-ng-controller="TasksController" data-ng-init="find()" class="task-preview-box">
 
 
+<div data-ng-repeat="task in tasks | filter:{ project: $root.passedProjectId }">
 
-
-	<div class="row task-preview-project card-content" data-ng-repeat="task in tasks | filter:{ project: $root.passedProjectId }" >
+	<div class="row card-content task-preview-project background-{{task.type}}" >
 
 		<a  data-ng-href="#!/tasks/{{task._id}}"  >
 
@@ -38,6 +39,6 @@
 
 
 	</div>
-
+</div>
 
 </section>

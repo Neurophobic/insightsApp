@@ -1,8 +1,12 @@
+
+
 <section data-ng-controller="InsightsController" data-ng-init="findOne()">
 
 	<div class="row">
 			<div class="col-xs-12 text-center">
-				<h1> Thanks for your insight! </h1>
+				<h1> Thanks for your insight! {{insight._id}}</h1>
+
+
 				<div>
 	</div>
 <!--	<div class="page-header">
@@ -24,4 +28,55 @@
 			<span data-ng-bind="insight.user.displayName"></span>
 		</em>
 	</small> -->
+
+
+<!--	<section data-ng-controller="ProjectsController" data-ng-init="findOneAndAdd()">
+		<div class="page-header project-view-title">
+			<h1 data-ng-bind="project.name"></h1>
+		</div>
+
+	</section> -->
+
+
+
+	<section data-ng-controller="ProjectsController" data-ng-init="findOneById()">
+		<div class="page-header" >
+
+		</div>
+		<div class="col-md-12">
+			<form class="form-horizontal" id="updateProjectNumForm" data-ng-submit="update()" novalidate>
+				<fieldset>
+
+					<div class="form-group">
+						<input type="submit" value="Update project num" class="btn btn-default">
+					</div>
+					<div data-ng-show="error" class="text-danger">
+						<strong data-ng-bind="error"></strong>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</section>
+
+
+	<section data-ng-controller="TasksController" data-ng-init="findOneById()">
+		<div class="page-header" >
+
+		</div>
+		<div class="col-md-12">
+			<form class="form-horizontal" id="updateTaskNumForm"data-ng-submit="update()" novalidate>
+				<fieldset>
+
+					<div class="form-group">
+						<input type="submit" value="Update task num" class="btn btn-default">
+					</div>
+					<div data-ng-show="error" class="text-danger">
+						<strong data-ng-bind="error"></strong>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</section>
+
+
 </section>

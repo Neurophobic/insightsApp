@@ -1,4 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Raleway:500,700,400,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,500,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300);
 
 
 .cust-list-profile{
@@ -54,14 +58,8 @@
   margin-top:-10px;
   border:0px;
   background-color: #FFFFFF;
-  -webkit-border-radius: 2px !important;
 
-  -moz-border-radius: 2px !important;
 
-  border-radius: 2px !important;
-
-  /*box-shadow:12px 18px #EEEEEE, 8px 12px #EEEEEE, 4px 6px #EEEEEE, 1px 2px #EEEEEE,2px 3px #EEEEEE ,3px 4px #EEEEEE;*/
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .card-content h1{
@@ -141,28 +139,63 @@ The view project.
 }
 
 .project-view-title {
-  margin-top:-40px;
-  font-family: 'Roboto', sans-serif;
+  margin-top:-100px;
+
+
+  position:absolute;
+
+  left:0px;
+  width:100%;
 
 }
 
+.background-green {
+  background-color:#4caf50;
+}
+.background-blue {
+  background-color:#2196f3;
+}
+.background-red {
+  background-color:#f44336;
+}
+
+.background-yellow {
+  background-color:#ffeb3b;
+}
+
+.background-text {
+  background-color:#4caf50;
+}
+.background-blue {
+  background-color:#2196f3;
+}
+.background-sound {
+  background-color:#f44336;
+}
+
+.background-image {
+  background-color:#ffeb3b;
+}
+
+
 .project-view-title h1 {
-  font-size:36px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  color:#202020;
+  font-size:2.1em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color:#FAFAFA;
   margin-top:20px;
   margin-bottom:5px;
+  margin-left:15px;
 
 }
 
 
 .project-view-title h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size:25px;
+  font-family: 'Raleway', serif;
+  font-size:1.1em;
   margin-top: 10px;
-  color: #606060;
-  margin-left:5px;
+  color: #FAFAFA;
+  margin-left:15px;
   margin-bottom:20px;
 
 }
@@ -171,10 +204,13 @@ The view project.
   margin-top:20px;
   padding-left:30px;
 }
-
+.task-preview-box{
+  margin-top:40px;
+  padding-top:1px;
+}
 
 .task-preview-project {
-  background-color:#f9f9f9;
+
   margin-top:40px;
   margin-left: 10px;
   margin-right: 10px;
@@ -183,10 +219,10 @@ The view project.
 
 .task-preview-project h1 {
 
-  font-size:20px;
-  font-weight:300;
-  font-family: 'Roboto', sans-serif;
-  color:#202020;
+  font-size:2em;
+  font-weight:400;
+  font-family: 'Raleway', serif;
+  color:#212121;
   margin-top:10px;
   margin-bottom:10px;
 }
