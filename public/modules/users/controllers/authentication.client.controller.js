@@ -1,11 +1,13 @@
 'use strict';
 
-angular.module('users').controller('AuthenticationController', ['$scope', '$http', '$location', 'Authentication',
-	function($scope, $http, $location, Authentication) {
+angular.module('users').controller('AuthenticationController', ['$scope', '$http', '$location', 'Authentication','$rootScope',
+	function($scope, $http, $location, Authentication, $rootScope) {
+
+		$rootScope.passedProject;
 		$scope.authentication = Authentication;
 
 		// If user is signed in then redirect back home
-		if ($scope.authentication.user) $location.path('/projects');
+		if ($scope.authentication.user) $location.path('/projects/'+$rootScope.passedProject._id);
 
 		$scope.signup = function() {
 			$http.post('/auth/signup', $scope.credentials).success(function(response) {
@@ -13,7 +15,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
 				$scope.authentication.user = response;
 
 				// And redirect to the index page
-				$location.path('/');
+				$location.path('/projects/'+$rootScope.passedProject._id);
 			}).error(function(response) {
 				$scope.error = response.message;
 			});
@@ -25,7 +27,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
 				$scope.authentication.user = response;
 
 				// And redirect to the index page
-				$location.path('/projects');
+				$location.path('/projects/'+$rootScope.passedProject._id);
 			}).error(function(response) {
 				$scope.error = response.message;
 			});

@@ -50,6 +50,10 @@ angular.module('tasks').controller('TasksController', ['$scope', '$stateParams',
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
+
+
+
+
 		};
 
 		// Find a list of Tasks
@@ -66,6 +70,10 @@ angular.module('tasks').controller('TasksController', ['$scope', '$stateParams',
 			});
 			$rootScope.passedTaskId = $stateParams.taskId;
 			$rootScope.passedTask = $scope.task;
+
+		
+
+
 		};
 
 		$scope.findOneById = function() {

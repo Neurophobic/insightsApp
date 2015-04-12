@@ -8,11 +8,17 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 		// Create new Insight
 		$scope.create = function() {
 			// Create new Insight object
+
+
+
 			var insight = new Insights ({
 				name: this.name,
 				text: this.text,
 				_creator: $rootScope.passedTask._id,
-				taskid: $rootScope.passedTask._id
+				taskid: $rootScope.passedTask._id,
+				projectid: $rootScope.passedProject._id,
+				type: $rootScope.passedTask.type,
+				city: $rootScope.city
 			});
 
 
@@ -30,6 +36,39 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 			});
 		};
 
+		$scope.geolocate = function(){
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(function(position){
+					$scope.$apply(function(){
+						$scope.position = position;
+						$scope.longitude = position.coords.longitude;
+						$scope.latitude = position.coords.latitude
+						console.log("lat="+$scope.latitude+" Longitude="+$scope.longitude);
+
+
+						$scope.geocoder = new google.maps.Geocoder()
+
+						$scope.latlng = new google.maps.LatLng($scope.latitude, $scope.longitude);
+						console.log($scope.latlng);
+						$scope.geocoder.geocode({
+							latLng: $scope.latlng
+						}, function(results, status) {
+							if (status === google.maps.GeocoderStatus.OK){
+								$scope.address= results;
+								$scope.city = $scope.address[0].address_components[2].long_name;
+								$rootScope.city = $scope.city;
+								console.log($scope.address[0]);
+								console.log($scope.city);
+								console.log($scope.address[0].formatted_address);
+							}
+						});
+					});
+				});
+
+
+
+			}
+		}
 
 		// Create new Insight
 		$scope.instacreate = function() {
@@ -38,7 +77,9 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 				name: this.name,
 				text: this.text,
 				_creator: $rootScope.passedTask._id,
-				taskid: $rootScope.passedTask._id
+				taskid: $rootScope.passedTask._id,
+				projectid: $rootScope.passedProject._id,
+				type: $rootScope.passedTask.type
 			});
 
 

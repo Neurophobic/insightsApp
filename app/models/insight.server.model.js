@@ -39,6 +39,20 @@ var InsightSchema = new Schema({
 	image: {
 		type: String,
 		default:''
+	},
+	projectid: {
+		type: Schema.ObjectId,
+		ref:'Projectid'
+	},
+	type: {
+		type: String,
+		default:'text',
+		trim: true
+	},
+	city: {
+		type: String,
+		default:'Nowhere',
+		trim:true
 	}
 
 });

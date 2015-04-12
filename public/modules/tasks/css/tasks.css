@@ -38,15 +38,15 @@
   width:4.4em;
   height:4.4em;
   border-radius:4.4em;
-  margin-right:20px;
+
 }
 
 .task-color-image{
-  background-color:#FFEB3B;
+  background-color:#fdd835;
   width:4.4em;
   height:4.4em;
   border-radius:4.4em;
-  margin-right:20px;
+
 }
 
 .task-color-sound{
@@ -54,12 +54,23 @@
   width:4.4em;
   height:4.4em;
   border-radius:4.4em;
-  margin-right:20px;
+
 }
 
 .task-preview-icon {
-  color:#212121;
-  font-size:2.7em;
-  margin-left:20%;
-  margin-top:5px;
+  color:rgba(0, 0, 0, 0.4);
+  font-size:5.6em;
+  margin-left:-10px;
+  margin-top:25px;
+}
+.task-tile{
+  height:200px;
+
+}
+
+.task-tile h1{
+  font-family:'Open Sans', sans-serif;
+  font-size:1.2em;
+  color:white;
+  margin-top:60px !important;
 }
