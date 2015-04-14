@@ -243,21 +243,21 @@ The view project.
 }
 
 .login-cover h1{
-  font-size:2.3em;
+  font-size:1.7em;
   font-weight:600;
   font-family: 'Open Sans', sans-serif;
   color:rgba(255,255,255,0.9);
 }
 
 .login-cover h2{
-  font-size:1.7em;
+  font-size:1.4em;
   font-weight:500;
   font-family: 'Open Sans', sans-serif;
   color:rgba(255,255,255,0.8);
 }
 
 .login-cover h3{
-  font-size:1.4em;
+  font-size:1.1em;
   font-weight:500;
   font-family: 'Open Sans', sans-serif;
   color:rgba(255,255,255,0.8);
