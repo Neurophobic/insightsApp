@@ -4,11 +4,12 @@ body {
 	background-color:#EEEEEE;
 }
 
-@media (max-height: 600px) {
+@media (max-height: 570px) {
 	body {
 		font-size:10px;
 	}
 }
+
 
 .content {
 	margin-top: 50px;
