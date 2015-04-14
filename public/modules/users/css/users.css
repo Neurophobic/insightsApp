@@ -103,11 +103,11 @@ input[type="email"] {
 	margin-bottom:20px;
 	font-family: 'Open Sans', sans-serif;
 	color:rgba(255,255,255,0.8);
-	background:#4caf50;
-	font-size:25px;
-	height:65px;
+	background:rgba(76,175,80,0);
+	font-size:20px;
+	height:60px;
 	width:70%;
-	border:solid 5px rgba(0,0,0,0.2);
+	border:solid 5px rgba(255,255,255,0.7);
 
 	border-radius:0px;
 }
@@ -116,12 +116,12 @@ input[type="email"] {
 
 	margin-bottom:20px;
 	font-family: 'Open Sans', sans-serif;
-	color:rgba(255,255,255,0.8);
-	background:#ef5350;
-	font-size:25px;
-	height:65px;
+	color:rgba(0,0,0,0.5);
+	background:rgba(76,175,80,0);
+	font-size:20px;
+	height:60px;
 	width:70%;
-	border:solid 5px rgba(0,0,0,0.2);
+	border:solid 5px rgba(0,0,0,0.5);
 
 	border-radius:0px;
 }

@@ -139,10 +139,11 @@ The view project.
 }
 
 .project-view-title {
-  margin-top:-97px;
+
 
   margin-bottom:0;
   position:absolute;
+  top:0;
 
   left:0px;
   width:100%;
@@ -205,8 +206,8 @@ The view project.
   padding-left:30px;
 }
 .task-preview-box{
-  margin-top:40px;
-  padding-top:-10px;
+  margin-top:70px;
+
 }
 
 .task-preview-project {
