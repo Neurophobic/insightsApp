@@ -1,7 +1,7 @@
 <section data-ng-controller="TasksController" data-ng-init="findOne()" >
 
 <div class="task-view-name task-type-{{task.type}}">
-	<h2 class="background-{{$root.passedProject.color}}"><a ng-href="http://localhost:3002/#!/projects/{{$root.passedProject._id}}">{{$root.passedProject.name}}</a></h2>
+	<h2 class="background-{{$root.passedProject.color}}"><a ng-href="http://insighted.co:3002/#!/projects/{{$root.passedProject._id}}">{{$root.passedProject.name}}</a></h2>
 	<h1 data-ng-bind="task.name"></h1>
 
 	<h2 data-ng-bind="task.purpose"></h2>
@@ -57,7 +57,7 @@
 
 
 
-				<form action="{{'http://insighted.co:3002/upload/uploading/' + $root.passedInstaInsight}}" method="post" enctype="multipart/form-data" onSubmit="JavaScript:ExampleJS()" >
+				<form action="{{'http://178.62.118.59:3002/upload/uploading/' + $root.passedInstaInsight}}" method="post" enctype="multipart/form-data" onSubmit="JavaScript:ExampleJS()" >
 					<input type="file" name="filefield" accept="image/*;capture=camera" class="custom-file-input">
 
 				</br>
