@@ -179,6 +179,16 @@ The view project.
   background-color:#fdd835;
 }
 
+.task-type-text {
+  color:#4caf50;
+}
+.task-type-image {
+  color:#fdd835;
+}
+.task-type-sound {
+  color:#f44336;
+}
+
 
 .project-view-title h1 {
   font-size:2.1em;
@@ -245,6 +255,7 @@ The view project.
   width:100%;
   left:0;
   background-size:100%;
+  z-index:1000;
 }
 
 .login-cover h1{

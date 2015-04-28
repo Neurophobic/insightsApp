@@ -42,7 +42,7 @@ angular.module('tasks').controller('TasksController', ['$scope', '$stateParams',
 
 		// Update existing Task
 		$scope.update = function() {
-			var task = $scope.task;
+			var task = $rootScope.passedTask;
 			task.numberinsights = (task.numberinsights+1);
 
 			task.$update(function() {
@@ -71,7 +71,7 @@ angular.module('tasks').controller('TasksController', ['$scope', '$stateParams',
 			$rootScope.passedTaskId = $stateParams.taskId;
 			$rootScope.passedTask = $scope.task;
 
-		
+
 
 
 		};

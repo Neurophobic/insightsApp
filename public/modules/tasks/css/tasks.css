@@ -8,10 +8,13 @@
   left:0px;
   width:100%;
 }
+.tasl-view-name a{
+  color:none;
+}
 .task-view-name h1{
   margin-top:10px;
   font-family: 'Open Sans', sans-serif;
-  color:#212121;
+
   font-weight:500;
   font-size: 1.9em;
   margin-left:15px;
@@ -20,7 +23,7 @@
 .task-view-name h2{
   margin-top:10px;
   font-family: 'Raleway', serif;
-  color:#212121;
+
   margin-left:15px;
   font-weight:400;
   font-size: 1.1em;
@@ -78,4 +81,35 @@
   color:white;
   margin-top:30px !important;
   margin-left:10px;
+}
+
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  font-family: 'Open Sans', sans-serif;
+  color:rgba(0,0,0,0.5);
+  padding:15px 40px 15px 40px;
+  content: 'TAKE A PHOTO';
+  display: inline-block;
+  background:#eeeeee;
+  border: 5px solid rgba(0,0,0,0.5);
+  border-radius: 0;
+
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 0;
+  font-weight: ;
+  font-size: 20px;
+
+
+}
+.custom-file-input:hover::before {
+
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }

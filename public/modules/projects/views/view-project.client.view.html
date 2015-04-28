@@ -28,9 +28,23 @@ body{
 }
 </style>
 </div>
+
+
+
+
+
+
+
+
 </section>
 
 <section data-ng-controller="TasksController" data-ng-init="find()" class="task-preview-box">
+
+
+
+
+
+
 
 
 	<div data-ng-repeat="task in tasks | filter:{ project: $root.passedProjectId }">
@@ -68,6 +82,13 @@ body{
 
 		</a>
 	</div>
+
+
+
+
+
+
+
 
 	<div class="login-cover" data-ng-hide="authentication.user">
 		<div class="row">
@@ -155,6 +176,9 @@ body{
 	</div>
 
 </section>
+
+
+
 
 <script>
 $( ".signup-button" ).click(function() {

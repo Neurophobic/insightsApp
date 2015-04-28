@@ -10,6 +10,7 @@ Schema = mongoose.Schema;
 * Project Schema
 */
 var ProjectSchema = new Schema({
+
 	name: {
 		type: String,
 		default: '',

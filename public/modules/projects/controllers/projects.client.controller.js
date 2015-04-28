@@ -47,14 +47,29 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 		};
 
 		// Update existing Project
-		$scope.update = function() {
-			var project = $scope.project;
+	/*	$scope.update = function() {
+			project = $rootScope.passedProject;
 			project.numberinsights = (project.numberinsights+1);
 			project.featuredtextinsight = $rootScope.passedInsight.text;
 			project.featuredinsighttype = $rootScope.passedTask.type;
 			project.featuredimageinsight = $rootScope.passedInsight._id;
 
 			project.$update(function() {
+				//$location.path('projects/' + project._id);
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
+		}; */
+
+		$scope.update = function() {
+			var project = $rootScope.passedProject;
+			project.numberinsights = (project.numberinsights+1);
+			project.featuredtextinsight = $rootScope.passedInsight.text;
+			project.featuredinsighttype = $rootScope.passedTask.type;
+			project.featuredimageinsight = $rootScope.passedInsight._id;
+
+			project.$update(function() {
+				console.log("added");
 				//$location.path('projects/' + project._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;

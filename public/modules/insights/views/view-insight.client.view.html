@@ -4,9 +4,11 @@
 
 	<div class="row">
 			<div class="col-xs-12 text-center">
-				<h1> Thanks for your insight! {{insight._id}}</h1>
+				<h1> Thanks for your insight!</h1>
 
+				<h2>// {{$root.passedProject.user.displayName}}</h2>
 
+				<a ng-href="http://localhost:3002/#!/projects/{{$root.passedProject._id}}"><button  class="signup-button ">GO BACK</button></a>
 				<div>
 	</div>
 <!--	<div class="page-header">
@@ -39,8 +41,8 @@
 
 
 
-	<section data-ng-controller="ProjectsController" data-ng-init="findOneById()">
-		<div class="page-header" >
+	<section data-ng-controller="ProjectsController" ng-init="update()">
+		<!--<div class="page-header" >
 
 		</div>
 		<div class="col-md-12">
@@ -55,12 +57,12 @@
 					</div>
 				</fieldset>
 			</form>
-		</div>
+		</div>-->
 	</section>
 
 
-	<section data-ng-controller="TasksController" data-ng-init="findOneById()">
-		<div class="page-header" >
+	<section data-ng-controller="TasksController" ng-init="update()">
+	<!--	<div class="page-header" >
 
 		</div>
 		<div class="col-md-12">
@@ -75,7 +77,7 @@
 					</div>
 				</fieldset>
 			</form>
-		</div>
+		</div> -->
 	</section>
 
 

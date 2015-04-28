@@ -7,7 +7,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
 		$scope.authentication = Authentication;
 
 		// If user is signed in then redirect back home
-		if ($scope.authentication.user) $location.path('/projects/'+$rootScope.passedProject._id);
+	//	if ($scope.authentication.user) $location.path('/projects/'+$rootScope.passedProject._id);
 
 		$scope.signup = function() {
 			$http.post('/auth/signup', $scope.credentials).success(function(response) {

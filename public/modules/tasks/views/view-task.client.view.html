@@ -1,10 +1,13 @@
 <section data-ng-controller="TasksController" data-ng-init="findOne()" >
 
-<div class="task-view-name background-{{task.type}}">
+<div class="task-view-name task-type-{{task.type}}">
+	<h2 class="background-{{$root.passedProject.color}}"><a ng-href="http://localhost:3002/#!/projects/{{$root.passedProject._id}}">{{$root.passedProject.name}}</a></h2>
 	<h1 data-ng-bind="task.name"></h1>
 
 	<h2 data-ng-bind="task.purpose"></h2>
+
 </div>
+</br>
 
 	<div ng-if="task.type == 'text'">
 		<section data-ng-controller="InsightsController">
@@ -14,7 +17,7 @@
 				<form class="form-horizontal" data-ng-submit="create()" data-ng-init="geolocate()" novalidate>
 
 					<fieldset>
-					
+
 						<div class="form-group">
 
 
@@ -22,8 +25,8 @@
 							<textarea class="form-control insight-textarea" data-ng-model="text" id="text" rows="8"></textarea>
 						</div>
 
-						<div class="form-group">
-							<input type="submit" class="btn btn-default">
+						<div class="form-group text-center">
+							<input type="submit" value="SUBMIT" class="signup-button">
 						</div>
 						<div data-ng-show="error" class="text-danger">
 							<strong data-ng-bind="error"></strong>
@@ -54,9 +57,11 @@
 
 
 
-				<form action="{{'http://localhost:3002/upload/uploading/' + $root.passedInstaInsight}}" method="post" enctype="multipart/form-data" onSubmit="JavaScript:ExampleJS()">
-					<input type="file" name="filefield" accept="image/*;capture=camera">
-					<input type="submit" class="btn btn-default">
+				<form action="{{'http://localhost:3002/upload/uploading/' + $root.passedInstaInsight}}" method="post" enctype="multipart/form-data" onSubmit="JavaScript:ExampleJS()" >
+					<input type="file" name="filefield" accept="image/*;capture=camera" class="custom-file-input">
+
+				</br>
+					<input type="submit" class="signup-button" value="SUBMIT">
 				</form>
 
 </div>
@@ -106,6 +111,29 @@
 		</section>
 
 	</div>
+
+
+	<div ng-if="task.type == 'sound'" >
+		<section data-ng-controller="InsightsController">
+			<div class="col-md-12" ng-init="instacreate()">
+			</div>
+			<div id="image-uploader">
+
+
+
+
+				<form action="{{'http://178.62.118.59:3002/upload/uploading/' + $root.passedInstaInsight}}" method="post" enctype="multipart/form-data" onSubmit="JavaScript:ExampleJS()" >
+					<input type="file" name="filefield" accept="video/*;capture=camera" class="custom-file-input" capture>
+
+				</br>
+				<input type="submit" class="signup-button" value="SUBMIT">
+			</form>
+
+		</div>
+
+
+	</section>
+</div>
 
 	<script type="text/javascript">
 

@@ -19,6 +19,7 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 				projectid: $rootScope.passedProject._id,
 				type: $rootScope.passedTask.type,
 				city: $rootScope.city
+
 			});
 
 
@@ -73,13 +74,18 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 		// Create new Insight
 		$scope.instacreate = function() {
 			// Create new Insight object
+			$scope.geolocate();
+
 			var insight = new Insights ({
 				name: this.name,
 				text: this.text,
 				_creator: $rootScope.passedTask._id,
 				taskid: $rootScope.passedTask._id,
 				projectid: $rootScope.passedProject._id,
-				type: $rootScope.passedTask.type
+				type: $rootScope.passedTask.type,
+
+				city: $rootScope.city
+
 			});
 
 
