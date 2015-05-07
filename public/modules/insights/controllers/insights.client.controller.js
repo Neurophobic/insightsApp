@@ -28,6 +28,8 @@ angular.module('insights').controller('InsightsController', ['$scope', '$statePa
 
 			// Redirect after save
 			insight.$save(function(response) {
+				$rootScope.passedInsight = response;
+				$rootScope.passedInsightText = response.text;
 				$location.path('insights/' + response._id);
 
 				// Clear form fields

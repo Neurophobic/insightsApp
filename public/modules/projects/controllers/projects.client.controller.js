@@ -63,14 +63,17 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 		$scope.update = function() {
 			var project = $rootScope.passedProject;
+			var finsighttext = $rootScope.passedInsight.text;
+			console.log("This is it:" + $rootScope.passedInsight._id);
 			project.numberinsights = (project.numberinsights+1);
-			project.featuredtextinsight = $rootScope.passedInsight.text;
+			project.featuredtextinsight = $rootScope.passedInsightText;
 			project.featuredinsighttype = $rootScope.passedTask.type;
 			project.featuredimageinsight = $rootScope.passedInsight._id;
 
 			project.$update(function() {
 				console.log("added" + $rootScope.passedInsight.text);
 				console.log(project.featuredtextinsight);
+				project.featuredtextinsight = "What" + $rootScope.passedInsight.text;
 				//$location.path('projects/' + project._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
