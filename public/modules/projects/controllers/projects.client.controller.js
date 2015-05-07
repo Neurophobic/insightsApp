@@ -69,7 +69,7 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 			project.featuredimageinsight = $rootScope.passedInsight._id;
 
 			project.$update(function() {
-				console.log("added");
+				console.log("added" + $rootScope.passedInsight.text);
 				//$location.path('projects/' + project._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
