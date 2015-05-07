@@ -72,8 +72,8 @@ angular.module('projects').controller('ProjectsController', ['$scope', '$statePa
 
 			project.$update(function() {
 				console.log("added" + $rootScope.passedInsight.text);
-				console.log(project.featuredtextinsight);
-				project.featuredtextinsight = "What" + $rootScope.passedInsight.text;
+
+				
 				//$location.path('projects/' + project._id);
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
